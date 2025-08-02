@@ -1,0 +1,58 @@
+{
+	"name": "@prefko/types",
+	"version": "1.0.0",
+	"description": "Shared TypeScript types and interfaces for Preferans game libraries",
+	"main": "./lib/index.js",
+	"types": "./lib/index.d.ts",
+	"engines": {
+		"node": ">=16.0.0"
+	},
+	"scripts": {
+		"build": "del /S /Q lib\\* && tsc",
+		"build:watch": "tsc --watch",
+		"lint": "eslint src/**/*.ts",
+		"lint:fix": "eslint src/**/*.ts --fix",
+		"format": "prettier --write \"src/**/*.ts\"",
+		"docs": "typedoc --readme none --out docs src",
+		"test": "jest",
+		"test:watch": "jest --watch",
+		"test:coverage": "jest --coverage",
+		"fix": "pnpm i & pnpm dedupe & pnpm audit --fix & pnpm skeletest -f & pnpm strictr -f & pnpm format & git add test",
+		"up": "pnpm up -i",
+		"latest": "pnpm up -i -L",
+		"l": "pnpm i & pnpm latest",
+		"prepublishOnly": "pnpm build"
+	},
+	"files": [
+		"lib/**/*",
+		"README.md"
+	],
+	"keywords": [
+		"preferans",
+		"types",
+		"typescript",
+		"cards",
+		"game"
+	],
+	"author": "Predrag Stojadinovic",
+	"license": "Unlicense",
+	"devDependencies": {
+		"@eslint/js": "^9.32.0",
+		"@types/jest": "^30.0.0",
+		"@typescript-eslint/eslint-plugin": "^8.38.0",
+		"@typescript-eslint/parser": "^8.38.0",
+		"eslint": "^9.32.0",
+		"eslint-config-prettier": "^10.1.8",
+		"eslint-plugin-prettier": "^5.5.3",
+		"jest": "^30.0.5",
+		"prettier": "^3.6.2",
+		"ts-jest": "^29.4.0",
+		"typedoc": "^0.28.9",
+		"typescript": "^5.9.2"
+	},
+	"packageManager": "pnpm@10.14.0",
+	"dependencies": {
+		"skeletest": "^0.7.1",
+		"strictr": "^0.5.3"
+	}
+}
