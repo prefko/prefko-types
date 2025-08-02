@@ -1,2 +1,2 @@
 # types
-@preferans/types containing common interfaces, types, and schemas for prefko
+@prefko/types containing common interfaces, types, and schemas for prefko
